@@ -1380,6 +1380,19 @@ body .slide-inner{
 }
 /* CN: P11 取消传统考默 — 简体版隐藏此页 */
 .slide[data-slide="11"]{display:none !important;}
+
+/* Full-canvas IMAGE2 poster slides */
+body .slide[data-slide="5"] .slide-inner,
+body .slide[data-slide="6"] .slide-inner {
+  padding:0 !important;
+  padding-bottom:0 !important;
+}
+body .slide[data-slide="5"] img,
+body .slide[data-slide="6"] img {
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+}
 </style>
 </head>
 <body>
@@ -1538,41 +1551,10 @@ body .slide-inner{
   </div>
 </section>
 
-<!-- ===== v6 SLIDE 6 — 三个班级「看见天赋，自选未来！」 ===== -->
+<!-- ===== v6 SLIDE 6 — 三个班级「看见天赋，自选未来！」(IMAGE2 render) ===== -->
 <section class="slide" data-slide="6" data-section="P1 新分班 · 三个班级">
-  <div class="slide-inner" style="max-width:1480px; gap:18px; justify-content:center;">
-    <div class="kicker k-cyan">P1 新分班 · 三个班级</div>
-    <h2 class="big" style="text-align:center; font-size:54px;">看见天赋 · <span class="gradient-text">自选未来！</span></h2>
-    <p class="tagline" style="text-align:center; max-width:1180px; font-size:28px !important;">英尖博艺创科，仁爱勤诚乐学。</p>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; width:100%; flex:1; min-height:0;">
-      <div class="card card-l-cyan" style="padding:24px; display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
-        <div>
-          <div style="font-size:54px; line-height:1;">📘</div>
-          <div class="kicker k-cyan" style="font-size:14px; margin-top:14px;">ENGLISH ELITE</div>
-          <h2 class="med" style="color:var(--c1); font-size:38px; margin-top:6px;">英尖班</h2>
-        </div>
-        <p class="body" style="font-size:25px !important; line-height:1.55 !important; color:var(--ink); font-weight:800;">英语沉浸式 · 数学／科学以英语授课</p>
-      </div>
-      <div class="card card-l-magenta" style="padding:24px; display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
-        <div>
-          <div style="font-size:54px; line-height:1;">🎭</div>
-          <div class="kicker k-magenta" style="font-size:14px; margin-top:14px;">ARTS & SPORTS</div>
-          <h2 class="med" style="color:var(--c2); font-size:38px; margin-top:6px;">博艺班</h2>
-        </div>
-        <p class="body" style="font-size:25px !important; line-height:1.55 !important; color:var(--ink); font-weight:800;">艺术 + 体育 · 体育与艺术活动及多元才能培育</p>
-      </div>
-      <div class="card card-l-amber" style="padding:24px; display:flex; flex-direction:column; justify-content:space-between; gap:16px;">
-        <div>
-          <div style="font-size:54px; line-height:1;">🤖</div>
-          <div class="kicker k-amber" style="font-size:14px; margin-top:14px;">AI INNOVATION</div>
-          <h2 class="med" style="color:var(--c3); font-size:38px; margin-top:6px;">创科班</h2>
-        </div>
-        <p class="body" style="font-size:25px !important; line-height:1.55 !important; color:var(--ink); font-weight:800;">制作 AI 小工具及小游戏课程</p>
-      </div>
-    </div>
-    <div style="width:100%; padding:20px 26px; border-radius:18px; background:linear-gradient(135deg,rgba(109,40,217,0.10),rgba(8,145,178,0.08)); border:1px solid var(--border); box-shadow:var(--shadow); text-align:center;">
-      <p style="margin:0; font-size:30px; font-weight:900; color:var(--ink);">家长按子女天赋自选优先 · 并非硬性分流</p>
-    </div>
+  <div class="slide-inner" style="padding:0; gap:0; max-width:none; align-items:center; justify-content:center;">
+    <img src="photos/slide6_cn.png?v=20260517-image2" alt="看见天赋 · 自选未来！英尖班、博艺班、创科班，家长按子女天赋自选优先，并非硬性分流" style="width:100%; height:100%; object-fit:contain;">
   </div>
 </section>
 
