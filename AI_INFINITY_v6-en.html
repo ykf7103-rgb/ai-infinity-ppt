@@ -1378,6 +1378,62 @@ body .slide-inner{
 .slide[data-slide="17"] .kicker {
   font-size: 20px !important; letter-spacing:3px !important;
 }
+
+/* English fullscreen safety fixes */
+body .slide[data-slide="1"] .slide-inner > * {
+  opacity:1 !important;
+}
+body .slide[data-slide="1"].active .slide-inner *,
+body .slide[data-slide="1"].active .slide-inner > *:not(.cover-orb) {
+  animation:none !important;
+  transform:none !important;
+  opacity:1 !important;
+}
+body .slide[data-slide="1"] .cover-orb {
+  opacity:.55 !important;
+  animation:orbPulse 7s ease-in-out infinite !important;
+}
+body .slide[data-slide="11"] .slide-inner {
+  gap:8px !important;
+  padding-top:64px !important;
+  padding-bottom:94px !important;
+}
+body .slide[data-slide="11"] h2.big {
+  font-size:47px !important;
+  line-height:1.08 !important;
+  letter-spacing:-1px !important;
+}
+body .slide[data-slide="11"] p.tagline {
+  font-size:23px !important;
+  line-height:1.35 !important;
+  margin:0 !important;
+}
+body .slide[data-slide="11"] .slide-inner > div[style*="grid-template-columns:1fr 1.4fr"] {
+  grid-template-columns:.92fr 1.48fr !important;
+  gap:16px !important;
+}
+body .slide[data-slide="11"] .slide-inner > div[style*="grid-template-columns:1fr 1.4fr"] > div:last-child {
+  gap:10px !important;
+}
+body .slide[data-slide="11"] .card {
+  padding:14px 16px !important;
+  overflow:visible !important;
+}
+body .slide[data-slide="11"] .card .kicker {
+  font-size:13px !important;
+  letter-spacing:2.5px !important;
+}
+body .slide[data-slide="11"] h3.lead {
+  font-size:25px !important;
+  line-height:1.18 !important;
+  margin-top:4px !important;
+}
+body .slide[data-slide="11"] .card .body,
+body .slide[data-slide="11"] .card p.body {
+  font-size:20px !important;
+  line-height:1.42 !important;
+  margin-top:6px !important;
+}
 </style>
 </head>
 <body>
@@ -1532,7 +1588,7 @@ body .slide-inner{
 <!-- ===== v6 SLIDE 5 — 8 Subjects with AI Teaching (IMAGE2 render) ===== -->
 <section class="slide" data-slide="5" data-section="MATRIX · 8 SUBJECTS · AI TEACHING">
   <div class="slide-inner" style="padding:0; gap:0; max-width:none; align-items:center; justify-content:center;">
-    <img src="photos/slide5_en.png?v=20260516-2" alt="AI Across 8 Subjects · Chinese, English, Math, Humanities, Science, Music, PE, Visual Arts" style="width:100%; height:100%; object-fit:contain;">
+    <img src="photos/slide5_en.png?v=20260517-image2" alt="AI Across 8 Subjects · Chinese, English, Math, Humanities, Science, Music, PE, Visual Arts" style="width:100%; height:100%; object-fit:contain;">
   </div>
 </section>
 
