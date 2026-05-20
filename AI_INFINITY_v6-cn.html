@@ -1387,18 +1387,6 @@ body .slide-inner{
 /* CN: P11 取消传统考默 — 简体版隐藏此页 */
 .slide[data-slide="11"]{display:none !important;}
 
-/* Full-canvas IMAGE2 poster slides */
-body .slide[data-slide="5"] .slide-inner,
-body .slide[data-slide="6"] .slide-inner {
-  padding:0 !important;
-  padding-bottom:0 !important;
-}
-body .slide[data-slide="5"] img,
-body .slide[data-slide="6"] img {
-  width:100% !important;
-  height:100% !important;
-  object-fit:contain !important;
-}
 </style>
 </head>
 <body>
@@ -1550,18 +1538,98 @@ body .slide[data-slide="6"] img {
   </div>
 </section>
 
-<!-- ===== v6 SLIDE 5 — 8 科 AI 教学 (IMAGE2 render) ===== -->
+<!-- ===== v6 SLIDE 5 — 8 科 AI 教学 ===== -->
 <section class="slide" data-slide="5" data-section="MATRIX · 8 科 AI 教学">
-  <div class="slide-inner" style="padding:0; gap:0; max-width:none; align-items:center; justify-content:center; position:relative;">
-    <img src="photos/slide5_cn.png?v=20260517-image2" alt="8 科全面 AI 教学 · 中文、英文、数学、人文、科学、音乐、体育、视觉艺术" style="width:100%; height:100%; object-fit:contain;">
-    <a class="play-btn-v6" href="MP4/AI%20IN%20ALL%20SUBJECTS.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/download/video-assets-2026-05-20/AI.IN.ALL.SUBJECTS.mp4" target="_blank" rel="noopener" style="position:absolute; left:50%; bottom:36px; transform:translateX(-50%); z-index:3;">▶ 播放 AI 教学影片</a>
+  <div class="slide-inner">
+    <div class="kicker k-magenta">AI in ALL SUBJECTS · 8 大科</div>
+    <h2 class="big">8 科　·　<span class="gradient-text">全面 AI 教学</span></h2>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:1fr 1fr; gap:14px; flex:1; min-height:0;">
+      <div class="subj8-tile" style="border-top-color:var(--c2);">
+        <div class="photo"><img src="photos/p6_chinese_battle.jpg" alt="中文 AI 成语攻防战"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c2);">中文</div><div class="subj-line">AI 成语攻防战</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c1);">
+        <div class="photo"><img src="photos/p5_english_ai.jpg" alt="英文 AI 魔法听写"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c1);">英文</div><div class="subj-line">AI 魔法听写</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c3);">
+        <div class="photo"><img src="photos/p8_math_comic.jpg" alt="数学 漫画变身器"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c3);">数学</div><div class="subj-line">乘法大师 · 漫画变身器</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c2);">
+        <div class="photo"><img src="photos/p5_humanities_booth.jpg" alt="人文 乐在其中摊位"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c2);">人文</div><div class="subj-line">乐在其“中” · 文化体验室</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c4);">
+        <div class="photo"><img src="photos/p10_science_steward.jpg" alt="科学 国宝 AI 管家"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c4);">科学</div><div class="subj-line">识花君 · 国宝 AI 管家</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c3);">
+        <div class="photo"><img src="photos/p5_music_intelligence.jpg" alt="音乐智能 手铃和小结他"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c3);">音乐</div><div class="subj-line">亲子 AI 歌曲 · Suno</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c5);">
+        <div class="photo"><img src="photos/p12_pe_tv.jpg" alt="体育 AI 智能"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c5);">体育</div><div class="subj-line">AI 国宝守卫战</div></div>
+      </div>
+      <div class="subj8-tile" style="border-top-color:var(--c-claude);">
+        <div class="photo"><img src="photos/p13_va_ai.jpeg" alt="视觉艺术 现代门神"></div>
+        <div class="meta"><div class="subj-name" style="color:var(--c-claude);">视觉艺术</div><div class="subj-line">现代门神 · 未来职业</div></div>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center; padding-top:8px;">
+      <a class="play-btn-v6" href="MP4/AI%20IN%20ALL%20SUBJECTS.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/download/video-assets-2026-05-20/AI.IN.ALL.SUBJECTS.mp4" target="_blank" rel="noopener">▶ 播放 8 科 AI 教学影片</a>
+    </div>
   </div>
 </section>
 
-<!-- ===== v6 SLIDE 6 — 三个班级「看见天赋，自选未来！」(IMAGE2 render) ===== -->
+<!-- ===== v6 SLIDE 6 — 三个班级「看见天赋，自选未来！」 ===== -->
 <section class="slide" data-slide="6" data-section="P1 新分班 · 三个班级">
-  <div class="slide-inner" style="padding:0; gap:0; max-width:none; align-items:center; justify-content:center;">
-    <img src="photos/slide6_cn.png?v=20260517-image2" alt="看见天赋 · 自选未来！英尖班、博艺班、创科班，家长按子女天赋自选优先，并非硬性分流" style="width:100%; height:100%; object-fit:contain;">
+  <div class="slide-inner" style="position:relative; overflow:hidden;">
+    <div class="kicker k-amber">P1 新分班 · 三个班级</div>
+    <h2 class="big" style="font-size:clamp(46px,4.4vw,72px); line-height:1.08;">看见天赋 · <span class="gradient-text">自选未来！</span></h2>
+    <p class="body" style="font-size:clamp(19px,1.7vw,28px) !important; font-weight:800; color:var(--ink-2); margin-top:-6px;">英尖、博艺、创科，仁爱勤诚乐学。</p>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; flex:1; min-height:0; align-items:stretch;">
+      <div class="card card-l-cyan" style="padding:24px 26px; display:flex; flex-direction:column; gap:18px;">
+        <div>
+          <div class="kicker k-cyan" style="font-size:14px;">ENGLISH ELITE</div>
+          <h3 style="font-size:48px; color:var(--c1); margin:8px 0 14px;">英尖班</h3>
+          <div style="font-size:76px; line-height:1; margin:8px 0;">ABC</div>
+        </div>
+        <div style="display:grid; gap:10px;">
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(8,145,178,0.08); font-size:23px; font-weight:800;">英语沉浸式</div>
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(8,145,178,0.08); font-size:23px; font-weight:800;">数学以英语授课</div>
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(8,145,178,0.08); font-size:23px; font-weight:800;">科学以英语授课</div>
+        </div>
+      </div>
+      <div class="card card-l-magenta" style="padding:24px 26px; display:flex; flex-direction:column; gap:18px;">
+        <div>
+          <div class="kicker k-magenta" style="font-size:14px;">ARTS & SPORTS</div>
+          <h3 style="font-size:48px; color:var(--c2); margin:8px 0 14px;">博艺班</h3>
+          <div style="font-size:72px; line-height:1; margin:8px 0;">♪ ⚽ 🎨</div>
+        </div>
+        <div style="display:grid; gap:10px;">
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(190,24,93,0.08); font-size:23px; font-weight:800;">艺术 + 体育</div>
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(190,24,93,0.08); font-size:23px; font-weight:800;">体艺活动训练</div>
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(190,24,93,0.08); font-size:23px; font-weight:800;">多元才能培育</div>
+        </div>
+      </div>
+      <div class="card card-l-amber" style="padding:24px 26px; display:flex; flex-direction:column; gap:18px;">
+        <div>
+          <div class="kicker k-amber" style="font-size:14px;">AI INNOVATION</div>
+          <h3 style="font-size:48px; color:var(--c3); margin:8px 0 14px;">创科班</h3>
+          <div style="font-size:72px; line-height:1; margin:8px 0;">&lt;/&gt; 🤖</div>
+        </div>
+        <div style="display:grid; gap:10px;">
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(180,83,9,0.08); font-size:23px; font-weight:800;">制作 AI 小工具</div>
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(180,83,9,0.08); font-size:23px; font-weight:800;">制作 AI 小游戏</div>
+          <div style="padding:12px 14px; border-radius:12px; background:rgba(180,83,9,0.08); font-size:23px; font-weight:800;">培育未来创作者</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; padding:16px 24px; background:linear-gradient(135deg,rgba(245,158,11,0.14),rgba(204,120,92,0.08)); border-radius:16px; border:1px solid rgba(180,83,9,0.18);">
+      <p style="font-size:32px; line-height:1.25; font-weight:900; color:var(--ink);">家长按子女天赋自选优先 · 并非硬性分流</p>
+    </div>
   </div>
 </section>
 
