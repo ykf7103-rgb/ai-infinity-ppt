@@ -5,11 +5,11 @@ $tag = "video-assets-2026-05-20"
 $title = "AI Infinity video assets 2026-05-20"
 $notes = "Large video files for the AI Infinity HTML presentation."
 
-$assets = @(
-  "MP4\AI IN ALL SUBJECTS.mp4",
-  "MP4\無考默V7.mov",
-  "MP4\大灣區宣傳_啟發潛能及課外活動.mp4"
-)
+$ai = (Resolve-Path -LiteralPath "MP4\AI IN ALL SUBJECTS.mp4").Path
+$nodict = (Get-ChildItem -LiteralPath "MP4" -File | Where-Object { $_.Name -like "*V7.mov" } | Select-Object -First 1).FullName
+$enrichment = (Get-ChildItem -LiteralPath "MP4" -File | Where-Object { $_.Extension -eq ".mp4" -and $_.Name -ne "AI IN ALL SUBJECTS.mp4" } | Select-Object -First 1).FullName
+
+$assets = @($ai, $nodict, $enrichment)
 
 gh auth status | Out-Host
 
