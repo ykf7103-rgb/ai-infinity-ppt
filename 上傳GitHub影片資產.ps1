@@ -6,8 +6,8 @@ $title = "AI Infinity video assets 2026-05-20"
 $notes = "Large video files for the AI Infinity HTML presentation."
 
 $ai = (Resolve-Path -LiteralPath "MP4\AI IN ALL SUBJECTS.mp4").Path
-$nodict = (Get-ChildItem -LiteralPath "MP4" -File | Where-Object { $_.Name -like "*V7.mov" } | Select-Object -First 1).FullName
-$enrichment = (Get-ChildItem -LiteralPath "MP4" -File | Where-Object { $_.Extension -eq ".mp4" -and $_.Name -ne "AI IN ALL SUBJECTS.mp4" } | Select-Object -First 1).FullName
+$nodict = (Resolve-Path -LiteralPath "MP4\no-dictation-v7.mp4").Path
+$enrichment = (Get-ChildItem -LiteralPath "MP4" -File | Where-Object { $_.Extension -eq ".mp4" -and $_.Name -ne "AI IN ALL SUBJECTS.mp4" -and $_.Name -ne "no-dictation-v7.mp4" } | Select-Object -First 1).FullName
 
 $assets = @($ai, $nodict, $enrichment)
 

@@ -1317,6 +1317,12 @@ body .slide-inner{
 /* Play-video button (v6) */
 .play-btn-v6 { display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#cc785c,#d99540); color:#fff !important; padding:14px 32px; border-radius:99px; font-size:22px; font-weight:800; text-decoration:none; box-shadow:0 6px 18px rgba(204,120,92,0.35); border:none; cursor:pointer; }
 .play-btn-v6:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(204,120,92,0.45); }
+.video-overlay{position:fixed; inset:0; z-index:1000; display:none; background:#000; align-items:center; justify-content:center;}
+.video-overlay.active{display:flex;}
+.video-overlay video{width:100%; height:100%; object-fit:contain; background:#000;}
+.video-close{position:fixed; top:18px; right:22px; z-index:1001; width:52px; height:52px; border:0; border-radius:50%; background:rgba(255,255,255,0.92); color:#111; font-size:34px; line-height:1; cursor:pointer; box-shadow:0 8px 28px rgba(0,0,0,0.35);}
+.video-close:hover{background:#fff; transform:scale(1.04);}
+.video-hint{position:fixed; left:24px; bottom:18px; z-index:1001; color:#fff; background:rgba(0,0,0,0.55); padding:8px 14px; border-radius:999px; font-size:14px; letter-spacing:0;}
 
 /* Three-stream card (v6 slide 6) */
 .stream-card { background:#fff; border-radius:18px; box-shadow:var(--shadow-lg); overflow:hidden; display:flex; flex-direction:column; }
@@ -1803,7 +1809,7 @@ body .slide[data-slide="11"] .card p.body {
       </div>
     </div>
     <div style="display:flex; justify-content:center; padding-top:8px;">
-      <a class="play-btn-v6" href="MP4/無考默V7.mov" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/download/video-assets-2026-05-20/V7.mov" target="_blank" rel="noopener">▶ Watch the P1 Multimodal Assessment Video</a>
+      <a class="play-btn-v6" href="MP4/no-dictation-v7.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/download/video-assets-2026-05-20/no-dictation-v7.mp4" target="_blank" rel="noopener">▶ Watch the P1 Multimodal Assessment Video</a>
     </div>
   </div>
 </section>
@@ -2021,6 +2027,12 @@ body .slide[data-slide="11"] .card p.body {
   </div>
 </section>
 
+<div id="videoOverlay" class="video-overlay" aria-hidden="true">
+  <button id="videoClose" class="video-close" type="button" aria-label="Close video">×</button>
+  <video id="presentationVideo" controls playsinline preload="metadata"></video>
+  <div class="video-hint">Press Esc or × to return to the presentation</div>
+</div>
+
 <script>
 // 🖥️ FIT-TO-SCREEN: compute a scale that fits the 1600×900 reference frame to any viewport
 (function fitToScreen(){
@@ -2154,6 +2166,47 @@ if (location.hostname.endsWith('.github.io')) {
     a.href = a.dataset.onlineHref;
   });
 }
+
+const videoOverlay = document.getElementById('videoOverlay');
+const presentationVideo = document.getElementById('presentationVideo');
+const videoClose = document.getElementById('videoClose');
+
+function closePresentationVideo() {
+  if (!videoOverlay || !presentationVideo) return;
+  presentationVideo.pause();
+  presentationVideo.removeAttribute('src');
+  presentationVideo.load();
+  videoOverlay.classList.remove('active');
+  videoOverlay.setAttribute('aria-hidden', 'true');
+}
+
+function openPresentationVideo(src) {
+  if (!videoOverlay || !presentationVideo || !src) return;
+  videoOverlay.classList.add('active');
+  videoOverlay.setAttribute('aria-hidden', 'false');
+  presentationVideo.src = src;
+  presentationVideo.currentTime = 0;
+  const playPromise = presentationVideo.play();
+  if (playPromise) playPromise.catch(() => {});
+}
+
+document.querySelectorAll('.play-btn-v6').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    openPresentationVideo(a.href);
+  });
+});
+
+videoClose?.addEventListener('click', closePresentationVideo);
+videoOverlay?.addEventListener('click', e => {
+  if (e.target === videoOverlay) closePresentationVideo();
+});
+document.addEventListener('keydown', e => {
+  if (!videoOverlay?.classList.contains('active')) return;
+  if (e.key === 'Escape') closePresentationVideo();
+  e.stopImmediatePropagation();
+  e.preventDefault();
+}, true);
 
 // === Language switch (file-based, navigates to the matching file and preserves slide #) ===
 (function() {
