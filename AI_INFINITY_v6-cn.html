@@ -1548,7 +1548,7 @@ body .slide[data-slide="6"] img {
 <section class="slide" data-slide="5" data-section="MATRIX · 8 科 AI 教学">
   <div class="slide-inner" style="padding:0; gap:0; max-width:none; align-items:center; justify-content:center; position:relative;">
     <img src="photos/slide5_cn.png?v=20260517-image2" alt="8 科全面 AI 教学 · 中文、英文、数学、人文、科学、音乐、体育、视觉艺术" style="width:100%; height:100%; object-fit:contain;">
-    <a class="play-btn-v6" href="MP4/AI%20IN%20ALL%20SUBJECTS.mp4" target="_blank" rel="noopener" style="position:absolute; left:50%; bottom:36px; transform:translateX(-50%); z-index:3;">▶ 播放 AI 教学影片</a>
+    <a class="play-btn-v6" href="MP4/AI%20IN%20ALL%20SUBJECTS.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/latest/download/AI%20IN%20ALL%20SUBJECTS.mp4" target="_blank" rel="noopener" style="position:absolute; left:50%; bottom:36px; transform:translateX(-50%); z-index:3;">▶ 播放 AI 教学影片</a>
   </div>
 </section>
 
@@ -1837,7 +1837,7 @@ body .slide[data-slide="6"] img {
       </div>
     </div>
     <div style="display:flex; justify-content:center; padding-top:6px;">
-      <a class="play-btn-v6" href="MP4/大灣區宣傳_啟發潛能及課外活動.mp4" target="_blank" rel="noopener">▶ 播放启发潜能课外活动及手语学习活动影片</a>
+      <a class="play-btn-v6" href="MP4/大灣區宣傳_啟發潛能及課外活動.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/latest/download/%E5%A4%A7%E7%81%A3%E5%8D%80%E5%AE%A3%E5%82%B3_%E5%95%9F%E7%99%BC%E6%BD%9B%E8%83%BD%E5%8F%8A%E8%AA%B2%E5%A4%96%E6%B4%BB%E5%8B%95.mp4" target="_blank" rel="noopener">▶ 播放启发潜能课外活动及手语学习活动影片</a>
     </div>
   </div>
 </section>
@@ -2056,6 +2056,13 @@ document.querySelectorAll('#dots .dot').forEach((d, i) => {
   d.classList.toggle('passed', i < current);
 });
 slides[current].querySelectorAll('.stat-num[data-target]').forEach(animateCount);
+
+// GitHub Pages 使用 Release assets 播放大型影片；本地/USB 保留 MP4 相對路徑。
+if (location.hostname.endsWith('.github.io')) {
+  document.querySelectorAll('.play-btn-v6[data-online-href]').forEach(a => {
+    a.href = a.dataset.onlineHref;
+  });
+}
 
 // === 语言切换 (file-based, 跳到对应 file 同保留 slide #) ===
 (function() {

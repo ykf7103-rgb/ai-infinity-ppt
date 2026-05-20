@@ -1569,7 +1569,7 @@ body .slide-inner{
       </div>
     </div>
     <div style="display:flex; justify-content:center; padding-top:8px;">
-      <a class="play-btn-v6" href="MP4/AI%20IN%20ALL%20SUBJECTS.mp4" target="_blank" rel="noopener">▶ 播放 8 科 AI 教學影片</a>
+      <a class="play-btn-v6" href="MP4/AI%20IN%20ALL%20SUBJECTS.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/latest/download/AI%20IN%20ALL%20SUBJECTS.mp4" target="_blank" rel="noopener">▶ 播放 8 科 AI 教學影片</a>
     </div>
   </div>
 </section>
@@ -1771,7 +1771,7 @@ body .slide-inner{
       </div>
     </div>
     <div style="display:flex; justify-content:center; padding-top:8px;">
-      <a class="play-btn-v6" href="MP4/無考默V7.mov" target="_blank" rel="noopener">▶ 播放 P.1 多元評估影片</a>
+      <a class="play-btn-v6" href="MP4/無考默V7.mov" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/latest/download/%E7%84%A1%E8%80%83%E9%BB%98V7.mov" target="_blank" rel="noopener">▶ 播放 P.1 多元評估影片</a>
     </div>
   </div>
 </section>
@@ -1896,7 +1896,7 @@ body .slide-inner{
       </div>
     </div>
     <div style="display:flex; justify-content:center; padding-top:6px;">
-      <a class="play-btn-v6" href="MP4/大灣區宣傳_啟發潛能及課外活動.mp4" target="_blank" rel="noopener">▶ 播放啟發潛能課外活動及手語學習活動影片</a>
+      <a class="play-btn-v6" href="MP4/大灣區宣傳_啟發潛能及課外活動.mp4" data-online-href="https://github.com/ykf7103-rgb/ai-infinity-ppt/releases/latest/download/%E5%A4%A7%E7%81%A3%E5%8D%80%E5%AE%A3%E5%82%B3_%E5%95%9F%E7%99%BC%E6%BD%9B%E8%83%BD%E5%8F%8A%E8%AA%B2%E5%A4%96%E6%B4%BB%E5%8B%95.mp4" target="_blank" rel="noopener">▶ 播放啟發潛能課外活動及手語學習活動影片</a>
     </div>
   </div>
 </section>
@@ -2105,6 +2105,13 @@ document.querySelectorAll('.photo16').forEach(ph => {
 progress.style.width = `${(1 / total) * 100}%`;
 sectionTag.textContent = slides[0].dataset.section || '';
 slides[0].querySelectorAll('.stat-num[data-target]').forEach(animateCount);
+
+// GitHub Pages 使用 Release assets 播放大型影片；本地/USB 保留 MP4 相對路徑。
+if (location.hostname.endsWith('.github.io')) {
+  document.querySelectorAll('.play-btn-v6[data-online-href]').forEach(a => {
+    a.href = a.dataset.onlineHref;
+  });
+}
 
 // === 語言切換 (file-based, 跳到對應 file 同保留 slide #) ===
 (function() {
