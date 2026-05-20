@@ -1,0 +1,36 @@
+AI INFINITY 簡報 USB 播放說明
+
+一、資料夾必須保持以下結構
+
+PPT\
+  00_啟動簡報.bat
+  AI_INFINITY_v6.html
+  AI_INFINITY_v6-en.html
+  AI_INFINITY_v6-cn.html
+  photos\
+  MP4\
+
+二、不可分開移動的資料夾
+
+1. photos\ 必須和 HTML 放在同一個 PPT 資料夾內。
+2. MP4\ 必須和 HTML 放在同一個 PPT 資料夾內。
+3. 不要只複製 HTML；否則背景圖片和影片會失效。
+
+三、播放方法
+
+1. 在 USB / SSD 內打開 PPT 資料夾。
+2. 雙擊 00_啟動簡報.bat。
+3. 用鍵盤左右鍵切換頁面。
+4. 到第 4、10、13 頁時，按影片按鈕播放影片。
+
+四、到另一部電腦時的建議
+
+1. 優先插入 USB 3.0 / USB 3.2 接口。
+2. 如果影片播放不順，先把整個 PPT 資料夾複製到該電腦桌面，再雙擊 00_啟動簡報.bat。
+3. 不要從 Google Drive 網頁預覽播放，請直接在資料夾內開啟。
+
+五、目前影片檔案
+
+1. MP4\AI IN ALL SUBJECTS.mp4
+2. MP4\無考默V7.mov
+3. MP4\大灣區宣傳_啟發潛能及課外活動.mp4
