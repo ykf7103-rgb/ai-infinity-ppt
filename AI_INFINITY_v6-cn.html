@@ -724,36 +724,37 @@ body::after{
   background:linear-gradient(90deg,var(--c-claude),var(--c2),var(--c3));
   width:5%; transition:width .8s var(--ease-out);
   z-index:100; box-shadow:0 0 18px rgba(204,120,92,0.45);}
-#section-tag{position:fixed; top:18px; left:32px; z-index:50;
-  font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-3);
-  letter-spacing:3px; text-transform:uppercase; padding:6px 14px;
+#section-tag{position:fixed; top:14px; left:24px; z-index:50;
+  font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--ink-3);
+  letter-spacing:2px; text-transform:uppercase; padding:4px 10px;
+  max-width:300px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   background:rgba(255,255,255,0.85); border:1px solid var(--border);
   border-radius:99px; backdrop-filter:blur(10px); box-shadow:var(--shadow-sm);}
 
 /* === 语言切换按钮 === */
-#lang-switch{position:fixed; top:12px; right:18px;
-  z-index:80; display:flex; gap:4px;
+#lang-switch{position:fixed; top:10px; right:14px;
+  z-index:80; display:flex; gap:2px;
   background:rgba(255,255,255,0.92); border:1px solid var(--border);
-  border-radius:99px; padding:4px; box-shadow:var(--shadow);
+  border-radius:99px; padding:3px; box-shadow:var(--shadow-sm);
   backdrop-filter:blur(12px);}
 #lang-switch button{
-  padding:6px 16px; border:none; background:transparent;
+  padding:4px 9px; border:none; background:transparent;
   font-family:'JetBrains Mono','Noto Sans SC','Microsoft YaHei',sans-serif;
-  font-size:12px; font-weight:700;
+  font-size:10px; font-weight:700; line-height:1.1;
   color:var(--ink-3); border-radius:99px; cursor:pointer;
-  transition:all .25s var(--ease-out); letter-spacing:1px;
-  min-width:42px;}
+  transition:all .25s var(--ease-out); letter-spacing:.5px;
+  min-width:30px;}
 #lang-switch button:hover{color:var(--ink); background:rgba(204,120,92,0.08);}
 #lang-switch button.active{
   background:linear-gradient(135deg,var(--c-claude),var(--c2));
   color:#fff; box-shadow:0 4px 12px rgba(204,120,92,0.30);}
-#lang-loading{position:fixed; top:60px; left:50%; transform:translateX(-50%);
+#lang-loading{position:fixed; top:44px; left:50%; transform:translateX(-50%);
   z-index:80; padding:6px 16px; background:rgba(0,0,0,0.85); color:#fff;
   border-radius:99px; font-family:'JetBrains Mono',monospace; font-size:11px;
   letter-spacing:1.5px; opacity:0; transition:opacity .3s; pointer-events:none;}
 #lang-loading.show{opacity:1;}
-#brand{position:fixed; top:18px; right:32px; z-index:50;
-  font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-4); letter-spacing:2px;}
+#brand{position:fixed; top:16px; right:145px; z-index:50;
+  font-family:'JetBrains Mono',monospace; font-size:9px; color:var(--ink-4); letter-spacing:1.5px; opacity:.65;}
 #pageInfo{position:fixed; bottom:18px; right:32px; z-index:50;
   font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:700;
   color:var(--ink-2);}
@@ -1386,8 +1387,7 @@ body .slide-inner{
 .slide[data-slide="17"] .kicker {
   font-size: 20px !important; letter-spacing:3px !important;
 }
-/* CN: P11 取消传统考默 — 简体版隐藏此页 */
-.slide[data-slide="11"]{display:none !important;}
+/* CN: P11 取消传统考默 — 简体版已移除此页 */
 
 </style>
 </head>
@@ -1402,7 +1402,7 @@ body .slide-inner{
 </div>
 <div id="lang-loading">转换中⋯</div>
 <div id="brand">LWWF · 2026</div>
-<div id="pageInfo"><span id="pn">1</span><span class="total"> / 15</span></div>
+<div id="pageInfo"><span id="pn">1</span><span class="total"> / 14</span></div>
 <div id="hint">← → 切换　·　F 全屏</div>
 <div id="dots"></div>
 
@@ -1712,43 +1712,8 @@ body .slide-inner{
   </div>
 </section>
 
-<!-- ===== v6 SLIDE 10 — 家长意愿 + 转入转出机制 ===== -->
-<section class="slide" data-slide="10" data-section="P1 分班 · 机制细节">
-  <div class="slide-inner">
-    <div class="kicker k-magenta">P1 新分班 · 机制细节</div>
-    <h2 class="big">家长意愿　＋　<span class="gradient-text">转入转出机制</span></h2>
-    <p class="tagline" style="font-size:30px !important; max-width:1380px;"><strong style="color:var(--c-pain);">上午／下午 — 能力探索评估日</strong>　·　根据孩子的评估结果安排合适班级。</p>
-    <!-- P4–P6 拔尖班大字 highlight box -->
-    <div style="margin:14px 0; padding:22px 32px; background:linear-gradient(135deg,rgba(190,24,93,0.12),rgba(204,120,92,0.08)); border-radius:16px; border-left:8px solid var(--c2); display:flex; align-items:center; gap:24px;">
-      <div style="font-size:64px;">📊</div>
-      <div>
-        <div class="kicker k-magenta" style="font-size:18px !important; letter-spacing:3px !important;">P4–P6 拔尖分班</div>
-        <p style="font-size:32px !important; font-weight:900; color:var(--c2); line-height:1.3; margin:6px 0 0;">4–6 年级将会按中文、英文及数学能力<span style="background:linear-gradient(120deg,#fef3c7 50%,transparent 50%); padding:0 6px;">拔尖分班</span></p>
-      </div>
-    </div>
-    <!-- 拔尖班 table -->
-    <div style="flex:1; min-height:0; display:grid; grid-template-columns:0.7fr 1fr 1fr; grid-template-rows:auto repeat(3,1fr); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); background:#fff;">
-      <!-- HEADER ROW -->
-      <div style="background:var(--c-claude); color:#fff; padding:18px; font-weight:900; font-size:24px; display:flex; align-items:center; justify-content:center;">年级</div>
-      <div style="background:var(--c1); color:#fff; padding:18px; font-weight:900; font-size:24px; display:flex; align-items:center; justify-content:center; border-left:2px solid var(--border);">分班方式</div>
-      <div style="background:var(--c2); color:#fff; padding:18px; font-weight:900; font-size:24px; display:flex; align-items:center; justify-content:center; border-left:2px solid var(--border);">转班机制</div>
-      <!-- ROW P1 -->
-      <div style="padding:18px; border-bottom:1px solid var(--border); font-weight:900; font-size:30px; color:var(--c5); display:flex; align-items:center; justify-content:center;">P1</div>
-      <div style="padding:18px; border-bottom:1px solid var(--border); border-left:2px solid var(--border); font-size:22px; font-weight:700; display:flex; align-items:center;">家长按意愿选择<br>（英尖班需面试）</div>
-      <div style="padding:18px; border-bottom:1px solid var(--border); border-left:2px solid var(--border); font-size:22px; font-weight:700; display:flex; align-items:center;">英尖班 P1→P2 可转入转出</div>
-      <!-- ROW P2-P3 -->
-      <div style="padding:18px; border-bottom:1px solid var(--border); background:rgba(190,24,93,0.04); font-weight:900; font-size:28px; color:var(--c5); display:flex; align-items:center; justify-content:center;">P2-P3</div>
-      <div style="padding:18px; border-bottom:1px solid var(--border); border-left:2px solid var(--border); background:rgba(190,24,93,0.04); font-size:22px; font-weight:700; display:flex; align-items:center;">维持原班级</div>
-      <div style="padding:18px; border-bottom:1px solid var(--border); border-left:2px solid var(--border); background:rgba(190,24,93,0.04); font-size:22px; font-weight:700; display:flex; align-items:center;">博艺 / 创科 可自由转入转出</div>
-      <!-- ROW P4-P6 -->
-      <div style="padding:18px; background:rgba(204,120,92,0.10); font-weight:900; font-size:28px; color:var(--c-claude); display:flex; align-items:center; justify-content:center;">P4-P6</div>
-      <div style="padding:18px; border-left:2px solid var(--border); background:rgba(204,120,92,0.10); font-size:22px; font-weight:900; color:var(--c-claude); display:flex; align-items:center;">📊 按中、英、数能力<br>拔尖分班</div>
-      <div style="padding:18px; border-left:2px solid var(--border); background:rgba(204,120,92,0.10); font-size:22px; font-weight:700; display:flex; align-items:center;">每学年按能力重新分组</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== v6 SLIDE 11 — 评估革新 · 简体版已按用户要求隐藏 ===== -->
+<!-- ===== CN removed slide 10 per user request ===== -->
+<!-- ===== CN removed slide 11 per earlier user request ===== -->
 
 <!-- ===== v6 SLIDE 12 — 全日制 双轨节奏 · 六日循环 ===== -->
 <section class="slide" data-slide="12" data-section="OPENING · 上下午编排">
