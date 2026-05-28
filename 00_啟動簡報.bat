@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 set "ROOT=%~dp0"
-set "HTML=%ROOT%AI_INFINITY_v7.html"
+set "HTML=%ROOT%AI_INFINITY_v9.html"
 
 if exist "%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe" (
   start "" "%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe" --new-window "%HTML%"

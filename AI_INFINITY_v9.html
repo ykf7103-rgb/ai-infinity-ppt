@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI INFINITY · LWWF · v9 (16 頁)</title>
+<title>AI INFINITY · LWWF · v9 (17 頁)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900;9..144,600..900&display=swap" rel="stylesheet">
@@ -323,6 +323,7 @@
 .v9-bottom-media img,
 .v9-side-image img{width:100%; height:100%; object-fit:contain; background:#fff;}
 .v9-bottom-media.is-zoom img{object-fit:cover; object-position:center; transform:scale(1.06);}
+.v9-bottom-media.is-wide-people img{object-fit:contain; object-position:center; transform:none;}
 .v9-side-image{height:154px; margin-top:auto;}
 .v9-side-image.is-tall{height:248px;}
 .v9-side-image.is-report img{object-fit:cover; object-position:top center; transform:scale(1.06);}
@@ -331,16 +332,20 @@
   width:100%;
   height:100%;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:10px;
+  padding:26px 58px 18px;
+  box-sizing:border-box;
   background:#fff8f0;
 }
-.v9-poster-wrap img{width:100%; height:100%; object-fit:contain;}
+.v9-poster-wrap img{width:100%; height:calc(100% - 82px); object-fit:contain;}
 .v9-poster-caption{
-  position:absolute;
-  left:50%;
-  bottom:10px;
-  transform:translateX(-50%);
+  position:relative;
+  left:auto;
+  bottom:auto;
+  transform:none;
   padding:14px 54px 16px;
   border-radius:16px;
   background:rgba(255,255,255,.93);
@@ -352,7 +357,10 @@
   border:1px solid rgba(109,40,217,.18);
   border-left:8px solid var(--c1);
   border-right:8px solid var(--c3);
-  animation:v9-rise .8s ease both;
+  animation:v9-fade-up .8s ease both;
+  flex:0 0 auto;
+  min-width:min(620px, 88%);
+  text-align:center;
 }
 .v9-poster-caption::before{
   content:"";
@@ -378,15 +386,17 @@
   position:relative;
   display:grid;
   grid-template-columns:1fr 1fr;
+  grid-template-rows:minmax(0,1fr) auto;
   gap:14px;
   min-height:0;
 }
 .v9-achievement-tag{
-  position:absolute;
-  left:22px;
-  right:22px;
+  position:relative;
+  left:auto;
+  right:auto;
   top:auto;
-  bottom:22px;
+  bottom:auto;
+  grid-column:1 / -1;
   z-index:2;
   padding:14px 24px 16px;
   border-radius:16px;
@@ -431,15 +441,56 @@
 .v9-photo-card img{width:100%; height:100%; object-fit:contain; background:#fff8f0;}
 .v9-photo-caption{
   flex:0 0 auto;
-  padding:11px 14px;
-  min-height:74px;
+  padding:14px 18px;
+  min-height:92px;
   background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(255,247,237,.96));
   color:var(--ink);
-  font-size:clamp(15px,1.05vw,19px);
+  font-size:clamp(21px,1.5vw,28px);
   font-weight:800;
   line-height:1.35;
   text-align:center;
   border-top:1px solid rgba(15,23,42,.08);
+}
+.v9-incentive-layout{
+  display:grid;
+  grid-template-columns:360px minmax(0,1fr);
+  gap:32px;
+  flex:1;
+  min-height:0;
+  align-items:start;
+}
+.v9-lst-logo-card{
+  border-radius:18px;
+  background:#fff;
+  box-shadow:var(--shadow-lg);
+  padding:28px;
+  border:1px solid rgba(15,23,42,.08);
+}
+.v9-lst-logo-card img{width:100%; height:auto; object-fit:contain;}
+.v9-incentive-card{
+  border-radius:18px;
+  background:rgba(255,255,255,.92);
+  box-shadow:var(--shadow-lg);
+  border:1px solid rgba(109,40,217,.16);
+  border-left:8px solid var(--c3);
+  padding:34px 42px;
+}
+.v9-incentive-card h2{
+  margin:0 0 28px;
+  font-size:clamp(42px,4vw,66px);
+  line-height:1.12;
+  color:var(--c5);
+}
+.v9-incentive-card ul{
+  margin:0;
+  padding-left:1.2em;
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  font-size:clamp(30px,2.4vw,42px);
+  line-height:1.35;
+  font-weight:900;
+  color:var(--ink);
 }
 @keyframes v9-sheen{
   0%,42%{left:-30%; opacity:0;}
@@ -1671,7 +1722,7 @@ body .slide-inner{
 </div>
 <div id="lang-loading">轉換中⋯</div>
 <div id="brand">LWWF · 2026</div>
-<div id="pageInfo"><span id="pn">1</span><span class="total"> / 16</span></div>
+<div id="pageInfo"><span id="pn">1</span><span class="total"> / 17</span></div>
 <div id="hint">← → 切換　·　F 全屏</div>
 <div id="dots"></div>
 
@@ -1750,7 +1801,7 @@ body .slide-inner{
     <div class="kicker k-violet">啟發潛能教育 · INVITATIONAL EDUCATION · 5P</div>
     <div class="v9-title-row">
       <h2 class="big">五大元素　<span class="gradient-text">啟發潛能</span></h2>
-      <div class="v9-quote">不問孩子為校添光；<br>只為孩子把路照亮。</div>
+      <div class="v9-quote">不要問小孩子為學校有甚麼貢獻，<br>反而要問學校能為小孩子做甚麼。</div>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1.15fr; gap:24px; flex:1; align-items:stretch; min-height:0;">
       <div style="border-radius:14px; overflow:hidden; box-shadow:var(--shadow-lg); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
@@ -1823,8 +1874,8 @@ body .slide-inner{
               <li>培養 AI 工具運用、提示設計與產品化思維。</li>
           </ul>
         </div>
-        <div class="v9-bottom-media is-zoom">
-          <img src="photos/p4_capture_0526210132.jpg" alt="Alibaba Cloud AI story studio login page">
+        <div class="v9-bottom-media is-wide-people">
+          <img src="photos/p4_alibaba_group_photo.jpeg" alt="Alibaba Cloud partner group photo">
         </div>
       </div>
     </div>
@@ -1897,11 +1948,8 @@ body .slide-inner{
         <div style="border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
           <img src="photos/p15_matatalab2.jpeg" alt="Matatalab coding tools" style="width:100%; height:100%; object-fit:contain; background:#fff8f0;">
         </div>
-        <div style="border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
-          <img src="photos/p8_flight_simulator.jpg" alt="Flight simulator learning" style="width:100%; height:100%; object-fit:contain; background:#fff8f0;">
-        </div>
-        <div style="border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
-          <img src="photos/p8_chrome_browser.jpg" alt="AI project creation on Chromebook" style="width:100%; height:100%; object-fit:contain; background:#fff8f0;">
+        <div style="grid-column:1 / -1; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
+          <img src="photos/p7_direct_admission_report.jpg" alt="Direct admission scheme news report" style="width:100%; height:100%; object-fit:contain; background:#fff8f0;">
         </div>
       </div>
       <div class="v9-right-stack">
@@ -1921,9 +1969,6 @@ body .slide-inner{
         <div style="padding:13px 18px; background:linear-gradient(135deg,rgba(180,83,9,0.08),rgba(180,83,9,0.04)); border-radius:12px; border-left:4px solid var(--c3);">
           <p style="font-size:clamp(18px,1.35vw,23px); font-weight:700; color:var(--c3); margin:0;">🎯 目的：培育對 AI 及電子學習有興趣的學生</p>
         </div>
-        <div class="v9-side-image is-tall is-report">
-          <img src="photos/p8_capture_0526210803.png" alt="Hong Kong 01 report about Vibe Coding at LWWF">
-        </div>
       </div>
     </div>
   </div>
@@ -1932,16 +1977,16 @@ body .slide-inner{
 <section class="slide" data-slide="9" data-section="博藝班 · ARTS & SPORTS">
   <div class="slide-inner">
     <div class="kicker k-magenta">博藝班 · ARTS & SPORTS</div>
-    <h2 class="big">博藝班　·　<span class="gradient-text">Arts & Sports</span></h2>
-    <div style="display:grid; grid-template-columns:1.12fr 1fr; gap:22px; flex:1; min-height:0; align-items:stretch;">
+      <h2 class="big">博藝班　·　<span class="gradient-text">Arts & Sports</span></h2>
+      <div style="display:grid; grid-template-columns:1.12fr 1fr; gap:22px; flex:1; min-height:0; align-items:stretch;">
       <div class="v9-arts-photos">
-        <div class="v9-achievement-tag">張晞朗同學及麥靖蕾同學連續4年成為中國香港代表隊</div>
         <div style="border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
           <img src="photos/p9_arts_sport_v8_1.jpeg" alt="Arts and sports student achievement photo 1" style="width:100%; height:100%; object-fit:contain; background:#fff8f0;">
         </div>
         <div style="border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#fff8f0; display:flex; align-items:center; justify-content:center;">
           <img src="photos/p9_arts_sport_v8_2.jpeg" alt="Arts and sports student achievement photo 2" style="width:100%; height:100%; object-fit:contain; background:#fff8f0;">
         </div>
+        <div class="v9-achievement-tag">本校連續4年培育學生入選中國香港代表隊</div>
       </div>
       <div class="v9-right-stack">
 
@@ -1958,7 +2003,7 @@ body .slide-inner{
           <p style="font-size:clamp(18px,1.35vw,23px); font-weight:700; color:var(--c2); margin:0;">🎯 目的：對體藝活動特別有興趣的同學發揮所長</p>
         </div>
         <div class="v9-side-image is-tall is-report">
-          <img src="photos/p9_capture_0526211328.png" alt="School recommendation direct admission scheme">
+          <img src="photos/p8_direct_admission_photo1.png" alt="School nominations direct admission scheme ceremony photo">
         </div>
       </div>
     </div>
@@ -2221,6 +2266,24 @@ body .slide-inner{
       </div>
     </div>
     <p style="text-align:center; font-family:'JetBrains Mono',monospace; letter-spacing:3px; color:var(--ink-4); font-size:12px; padding-top:2px;">LWWF · 樂善堂梁黃蕙芳紀念學校 · 2026</p>
+  </div>
+</section>
+
+<section class="slide" data-slide="17b" data-section="升讀本堂小學獎勵計劃">
+  <div class="slide-inner">
+    <div class="kicker k-amber">樂善堂 · 獎勵計劃</div>
+    <div class="v9-incentive-layout">
+      <div class="v9-lst-logo-card">
+        <img src="photos/p16_lok_sin_tong_logo.png" alt="Lok Sin Tong logo">
+      </div>
+      <div class="v9-incentive-card">
+        <h2>升讀本堂小學獎勵計劃</h2>
+        <ul>
+          <li>本堂各轄屬幼稚園高班學生</li>
+          <li>轄屬學校學生之直系弟妹</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 

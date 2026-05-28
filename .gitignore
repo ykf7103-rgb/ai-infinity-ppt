@@ -1,11 +1,15 @@
 *
 !/.gitignore
+!/index.html
 !/AI_INFINITY_v6.html
 !/AI_INFINITY_v6-cn.html
 !/AI_INFINITY_v6-en.html
 !/AI_INFINITY_v7.html
 !/AI_INFINITY_v7-cn.html
 !/AI_INFINITY_v7-en.html
+!/AI_INFINITY_v9.html
+!/AI_INFINITY_v9-cn.html
+!/AI_INFINITY_v9-en.html
 !/00_啟動簡報.bat
 !/USB播放說明.txt
 !/上傳GitHub影片資產.ps1
