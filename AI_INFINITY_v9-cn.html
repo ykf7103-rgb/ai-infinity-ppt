@@ -325,8 +325,8 @@
 .v9-bottom-media.is-zoom img{object-fit:cover; object-position:center; transform:scale(1.06);}
 .v9-bottom-media.is-wide-people img{object-fit:contain; object-position:center; transform:none;}
 .v9-side-image{height:154px; margin-top:auto;}
-.v9-side-image.is-tall{height:248px;}
-.v9-side-image.is-report img{object-fit:cover; object-position:top center; transform:scale(1.06);}
+.v9-side-image.is-tall{height:320px;}
+.v9-side-image.is-report img{object-fit:cover; object-position:top center; transform:scale(1.18);}
 .v9-poster-wrap{
   position:relative;
   width:100%;
@@ -452,32 +452,38 @@
   border-top:1px solid rgba(15,23,42,.08);
 }
 .v9-incentive-layout{
-  display:grid;
-  grid-template-columns:360px minmax(0,1fr);
-  gap:32px;
+  position:relative;
+  display:flex;
   flex:1;
   min-height:0;
-  align-items:start;
+  align-items:center;
+  justify-content:center;
+  padding:130px 40px 40px;
 }
 .v9-lst-logo-card{
+  position:absolute;
+  left:0;
+  top:0;
+  width:360px;
   border-radius:18px;
   background:#fff;
   box-shadow:var(--shadow-lg);
-  padding:28px;
+  padding:24px 28px;
   border:1px solid rgba(15,23,42,.08);
 }
 .v9-lst-logo-card img{width:100%; height:auto; object-fit:contain;}
 .v9-incentive-card{
+  width:min(1180px, calc(100% - 120px));
   border-radius:18px;
   background:rgba(255,255,255,.92);
   box-shadow:var(--shadow-lg);
   border:1px solid rgba(109,40,217,.16);
   border-left:8px solid var(--c3);
-  padding:34px 42px;
+  padding:54px 70px 62px;
 }
 .v9-incentive-card h2{
-  margin:0 0 28px;
-  font-size:clamp(42px,4vw,66px);
+  margin:0 0 42px;
+  font-size:clamp(62px,5.2vw,88px);
   line-height:1.12;
   color:var(--c5);
 }
@@ -486,11 +492,45 @@
   padding-left:1.2em;
   display:flex;
   flex-direction:column;
-  gap:26px;
-  font-size:clamp(30px,2.4vw,42px);
+  gap:36px;
+  font-size:clamp(44px,3.35vw,62px);
   line-height:1.35;
   font-weight:900;
   color:var(--ink);
+}
+.v9-incentive-layout.is-en{
+  align-items:flex-end;
+  padding:220px 40px 28px;
+}
+.v9-incentive-layout.is-en .v9-incentive-card{
+  width:min(1120px, calc(100% - 160px));
+  padding:36px 56px 42px;
+}
+.v9-incentive-layout.is-en .v9-incentive-card h2{
+  margin-bottom:28px;
+  font-size:clamp(44px,3.5vw,58px);
+  line-height:1.08;
+}
+.v9-incentive-layout.is-en .v9-incentive-card ul{
+  gap:22px;
+  font-size:clamp(31px,2.35vw,43px);
+  line-height:1.25;
+}
+.slide[data-slide="18"] .slide-inner > div[style*="grid-template-columns"]{
+  grid-template-columns:.92fr .92fr 1.18fr !important;
+}
+.slide[data-slide="18"] .slide-inner > div[style*="grid-template-columns"] > div:nth-child(3){
+  grid-template-rows:1.14fr .86fr !important;
+  gap:14px !important;
+}
+.slide[data-slide="18"] .slide-inner > div[style*="grid-template-columns"] > div:nth-child(3) > div{
+  padding:8px 8px !important;
+}
+.slide[data-slide="18"] .slide-inner > div[style*="grid-template-columns"] > div:nth-child(3) > div:first-child img{
+  width:108% !important;
+  height:108% !important;
+  max-width:none !important;
+  max-height:none !important;
 }
 @keyframes v9-sheen{
   0%,42%{left:-30%; opacity:0;}
@@ -2219,7 +2259,7 @@ body .slide-inner{
 <section class="slide" data-slide="17" data-section="CTA · 结语">
   <div class="slide-inner">
     <div class="kicker">结语 · CTA</div>
-    <h1 class="hero" style="font-size:48px; max-width:1480px; line-height:1.22; margin-bottom:2px;">用<span class="gradient-text">今天的每一步</span><br>铺展孩子<span class="gradient-text-warm">十六年后的康庄大道</span>。</h1>
+    <h1 class="hero" style="font-size:48px; max-width:1480px; line-height:1.22; margin-bottom:2px;">用<span class="gradient-text">今天的每一步</span><br>铺展孩子<span class="gradient-text-warm">十六年后的康庄大道</span></h1>
     <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; flex:1; min-height:0; align-items:stretch;">
       <div class="v9-photo-card">
         <div class="frame"><img src="photos/p16_lwwf_neon_1.jpg" alt="LWWF closing photo 1"></div>
